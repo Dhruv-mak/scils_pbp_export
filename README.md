@@ -194,7 +194,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔗 Links
 
-- [SCiLS Lab Documentation](https://scils.de)
 - [PyQt6 Documentation](https://doc.qt.io/qtforpython/)
 - [UV Package Manager](https://github.com/astral-sh/uv)
 
