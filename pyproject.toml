@@ -1,0 +1,16 @@
+[project]
+name = "pbp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.3.2",
+    "pandas>=2.3.1",
+    "pyinstaller>=6.15.0",
+    "pyqt6>=6.9.1",
+    "scilslab",
+]
+
+[tool.uv.sources]
+scilslab = { path = "wheel/scilslab-8.1.122-cp313-cp313-win_amd64.whl" }
