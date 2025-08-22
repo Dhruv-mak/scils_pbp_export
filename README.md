@@ -142,44 +142,6 @@ uv run pyinstaller feature_extractor_gui.spec
 
 The project includes GitHub Actions workflow for automated building:
 
-```yaml
-name: Build and Release
-on: [push, pull_request]
-jobs:
-  build:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install UV
-        run: curl -LsSf https://astral.sh/uv/install.sh | sh
-      - name: Install dependencies
-        run: uv sync
-      - name: Build executable
-        run: uv run pyinstaller feature_extractor_gui.spec
-```
-
-## 📁 Project Structure
-
-```
-scils-feature-extractor/
-├── feature_extractor_gui.py          # Main GUI application
-├── extract_feature_data_ultra_fast.py # Core extraction engine
-├── extract_feature_data_optimized.py  # Alternative optimized version
-├── pyproject.toml                     # Project configuration
-├── requirements.txt                   # Pip dependencies
-├── README.md                          # Project documentation
-├── LICENSE                            # MIT License
-├── .github/
-│   └── workflows/
-│       └── build.yml                  # CI/CD pipeline
-├── static/
-│   └── window.png                     # Application screenshot
-├── tests/
-│   ├── test_extraction.py             # Extraction tests
-│   └── test_gui.py                    # GUI tests
-└── dist/                              # Built executables
-```
-
 ## 🤝 Contributing
 
 1. Fork the repository
