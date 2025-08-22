@@ -12,16 +12,14 @@ A high-performance desktop application for extracting feature data from SCiLS La
 
 - **Ultra-Fast Processing**: 5-20x faster than traditional methods using vectorized NumPy operations
 - **Professional GUI**: Modern PyQt6 interface with real-time progress tracking
-- **Batch Processing**: Handle multiple .slx files efficiently
 - **Memory Optimized**: Pre-allocated arrays and efficient data structures
 - **Background Processing**: Non-blocking UI with threaded extraction
-- **Cross-Platform**: Windows, macOS, and Linux support
 - **CI/CD Pipeline**: Automated builds with GitHub Actions and PyInstaller
 
 ## 📸 Application Screenshot
 
 <div align="center">
-  <img src="static/window.png" alt="SCiLS Lab Feature Extractor GUI" width="800px">
+  <img src="static/image.png" alt="SCiLS Lab Feature Extractor GUI" width="800px">
   <p><em>Professional PyQt6 interface with real-time progress tracking and batch processing capabilities</em></p>
 </div>
 
@@ -46,15 +44,14 @@ A high-performance desktop application for extracting feature data from SCiLS La
 
 ### Prerequisites
 
-- Python 3.8 or higher
-- UV package manager (recommended) or pip
+- UV package manager (recommended) or pip with python 3.13
 
 ### Using UV (Recommended)
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/scils-feature-extractor.git
-cd scils-feature-extractor
+git clone https://github.com/Dhruv-mak/scils_pbp_export.git
+cd scils_pbp_export
 
 # Install UV if not already installed
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -70,7 +67,7 @@ uv run python feature_extractor_gui.py
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/scils-feature-extractor.git
+git clone https://github.com/Dhruv-mak/scils_pbp_export.git
 cd scils-feature-extractor
 
 # Create virtual environment
@@ -92,6 +89,7 @@ python feature_extractor_gui.py
    ```bash
    uv run python feature_extractor_gui.py
    ```
+   - or get installer .exe from release and export
 
 2. **Select Input File**
    - Click "Browse" to select your .slx file
@@ -106,70 +104,6 @@ python feature_extractor_gui.py
    - Monitor real-time progress
    - View completion status
 
-### Command Line Interface
-
-```bash
-# Basic extraction
-uv run python extract_feature_data_ultra_fast.py input.slx output.csv
-
-# With custom parameters
-uv run python extract_feature_data_ultra_fast.py input.slx output.csv --batch-size 1000
-```
-
-## 🔧 Configuration
-
-### Project Configuration (pyproject.toml)
-
-```toml
-[project]
-name = "scils-feature-extractor"
-version = "1.0.0"
-description = "High-performance SCiLS Lab feature extractor"
-authors = [{name = "Your Name", email = "your.email@example.com"}]
-license = {text = "MIT"}
-requires-python = ">=3.8"
-dependencies = [
-    "PyQt6>=6.0.0",
-    "numpy>=1.21.0",
-    "pandas>=1.3.0",
-    "scikit-learn>=1.0.0",
-]
-
-[project.optional-dependencies]
-dev = [
-    "pytest>=7.0.0",
-    "black>=22.0.0",
-    "flake8>=4.0.0",
-    "mypy>=0.950",
-]
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[tool.uv]
-dev-dependencies = [
-    "pytest>=7.0.0",
-    "black>=22.0.0",
-    "flake8>=4.0.0",
-]
-```
-
-## ⚡ Performance Benchmarks
-
-### Extraction Speed Comparison
-
-| Method | File Size | Processing Time | Speedup |
-|--------|-----------|----------------|---------|
-| Original Notebook | 100MB | 45.2s | 1x |
-| Optimized Version | 100MB | 8.7s | **5.2x** |
-| Ultra-Fast Algorithm | 100MB | 2.3s | **19.7x** |
-
-### Memory Usage
-
-- **Original**: ~2.1GB peak memory
-- **Optimized**: ~850MB peak memory (**60% reduction**)
-- **Ultra-Fast**: ~420MB peak memory (**80% reduction**)
 
 ## 🏢 Technical Stack
 
