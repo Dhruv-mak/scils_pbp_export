@@ -158,19 +158,6 @@ jobs:
         run: uv run pyinstaller feature_extractor_gui.spec
 ```
 
-## 🧪 Testing
-
-```bash
-# Run all tests
-uv run pytest
-
-# Run with coverage
-uv run pytest --cov=src
-
-# Run specific test file
-uv run pytest tests/test_extraction.py
-```
-
 ## 📁 Project Structure
 
 ```
