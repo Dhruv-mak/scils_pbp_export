@@ -147,10 +147,24 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
-    with open(os.path.join("static", "style.qss"), 'r') as f:
-        _style = f.read()
-
-    app.setStyleSheet(_style)
+    # Get the correct path for both development and compiled versions
+    if getattr(sys, 'frozen', False):
+        # Running as compiled executable
+        base_path = sys._MEIPASS
+    else:
+        # Running as script
+        base_path = os.path.dirname(os.path.abspath(__file__))
+    
+    style_path = os.path.join(base_path, "static", "style.qss")
+    
+    try:
+        with open(style_path, 'r') as f:
+            _style = f.read()
+        app.setStyleSheet(_style)
+    except FileNotFoundError:
+        print(f"Warning: Could not load style file from {style_path}")
+        # Continue without styling
+    
     window = MainWindow()
     window.show()
     sys.exit(app.exec())
